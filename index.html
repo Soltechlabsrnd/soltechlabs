@@ -22,15 +22,15 @@ body{background:#fff;color:#000;min-height:100vh;}
 .brand{font-size:22px;font-weight:700;color:#fff;}
 .nav{display:flex;gap:28px;}
 .nav a{
-    text-decoration:none;font-size:14px;font-weight:600;
-    color:rgba(255,255,255,.65);position:relative;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    color:rgba(255,255,255,.65);
 }
-.nav a.active,.nav a:hover{color:#fff;}
-.nav a::after{
-    content:"";position:absolute;left:0;bottom:-6px;
-    width:0;height:2px;background:#fff;transition:.3s;
+.nav a.active,
+.nav a:hover{
+    color:#fff;
 }
-.nav a.active::after{width:100%;}
 
 .spacer{height:64px;}
 
@@ -60,14 +60,10 @@ p{opacity:.9;}
     gap:12px;
     margin-bottom:20px;
     font-weight:700;
-    color:#000; /* ICON COLOR SOURCE */
+    color:#000;
 }
 .contact-item a{color:#000;text-decoration:none;}
-.contact-item svg{
-    width:22px;
-    height:22px;
-    display:block;
-}
+.contact-item svg{width:22px;height:22px;display:block;}
 
 @media(max-width:600px){
     .header{padding:0 18px;}
@@ -82,8 +78,8 @@ p{opacity:.9;}
 <header class="header">
     <div class="brand">SolTechLabs</div>
     <nav class="nav">
-        <a href="#home" id="nav-home" class="active">Home</a>
-        <a href="#contact" id="nav-contact">Contact Us</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#contact">Contact Us</a>
     </nav>
 </header>
 
@@ -94,7 +90,7 @@ p{opacity:.9;}
         <h1>SolTechLabs</h1>
         <div class="tagline">SOLUTION BY R&amp;D</div>
         <p>
-            SolTechLabs Is A Research-Driven Tech Consultancy And Development Initative.
+            SolTechLabs Is A Research Driven Tech Consultancy And Development Initative.
             We Focus On Finding And Building Valuable Tech Solutions By Research And Development.
         </p>
     </div>
@@ -112,14 +108,12 @@ p{opacity:.9;}
     </div>
 
     <!-- WhatsApp -->
-    <!-- WhatsApp Contact Option -->
-<div class="contact-item">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.477 2 2 6.486 2 12.018c0 1.93.5 3.823 1.45 5.49L2 22l4.61-1.41a9.94 9.94 0 0 0 5.39 1.56c5.523 0 10-4.486 10-10.018C22 6.486 17.523 2 12 2zm0 18.11a8.06 8.06 0 0 1-4.12-1.13l-.3-.18-2.74.84.84-2.66-.2-.31A8.03 8.03 0 1 1 12 20.11zm4.43-6.01c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.21-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
-    </svg>
-    <a href="https://wa.me/918058586999" target="_blank">+91 80585 86999</a>
-</div>
-
+    <div class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.486 2 12.018c0 1.93.5 3.823 1.45 5.49L2 22l4.61-1.41a9.94 9.94 0 0 0 5.39 1.56c5.523 0 10-4.486 10-10.018C22 6.486 17.523 2 12 2zm0 18.11a8.06 8.06 0 0 1-4.12-1.13l-.3-.18-2.74.84.84-2.66-.2-.31A8.03 8.03 0 1 1 12 20.11zm4.43-6.01c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.21-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
+        </svg>
+        <a href="https://wa.me/918058586999" target="_blank">+91 80585 86999</a>
+    </div>
 
     <!-- Email -->
     <div class="contact-item">
@@ -131,20 +125,8 @@ p{opacity:.9;}
 </section>
 
 <script>
-const sections=document.querySelectorAll("section");
+/* CLICK HIGHLIGHT ONLY */
 const navLinks=document.querySelectorAll(".nav a");
-
-window.addEventListener("scroll",()=>{
-    let current="home";
-    sections.forEach(s=>{
-        if(window.scrollY>=s.offsetTop-120){
-            current=s.id;
-        }
-    });
-    navLinks.forEach(a=>a.classList.remove("active"));
-    document.getElementById("nav-"+current).classList.add("active");
-});
-
 navLinks.forEach(link=>{
     link.addEventListener("click",()=>{
         navLinks.forEach(a=>a.classList.remove("active"));
