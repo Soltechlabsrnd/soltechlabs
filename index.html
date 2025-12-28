@@ -60,20 +60,15 @@ p{opacity:.9;}
     gap:12px;
     margin-bottom:20px;
     font-weight:700;
+    color:#000; /* ICON COLOR SOURCE */
 }
-
-.contact-item a{
-    color:#000;
-    text-decoration:none;
-}
-
+.contact-item a{color:#000;text-decoration:none;}
 .contact-item svg{
     width:22px;
     height:22px;
-    fill:#000;
+    display:block;
 }
 
-/* MOBILE */
 @media(max-width:600px){
     .header{padding:0 18px;}
     .brand{font-size:18px;}
@@ -107,33 +102,32 @@ p{opacity:.9;}
 
 <section id="contact">
     <h2>Contact Us</h2>
-  
-   <!-- Call -->
-   <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+    <!-- Call -->
+    <div class="contact-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.59a1 1 0 0 1-.25 1.01l-2.2 2.19z"/>
         </svg>
-        <a href="tel:+918058586999"> +91 80585 86999</a>
+        <a href="tel:+918058586999">+91 80585 86999</a>
     </div>
 
     <!-- WhatsApp -->
-    <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 2C6.477 2 2 6.486 2 12.018c0 1.93.5 3.823 1.45 5.49L2 22l4.61-1.41a9.94 9.94 0 0 0 5.39 1.56c5.523 0 10-4.486 10-10.018C22 6.486 17.523 2 12 2zm0 18.11a8.06 8.06 0 0 1-4.12-1.13l-.3-.18-2.74.84.84-2.66-.2-.31A8.03 8.03 0 1 1 12 20.11zm4.43-6.01c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.21-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
-        </svg>
-        <a href="https://wa.me/918058586999" target="_blank">+91 80585 86999</a>
-    </div>
+    <!-- WhatsApp Contact Option -->
+<div class="contact-item">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.477 2 2 6.486 2 12.018c0 1.93.5 3.823 1.45 5.49L2 22l4.61-1.41a9.94 9.94 0 0 0 5.39 1.56c5.523 0 10-4.486 10-10.018C22 6.486 17.523 2 12 2zm0 18.11a8.06 8.06 0 0 1-4.12-1.13l-.3-.18-2.74.84.84-2.66-.2-.31A8.03 8.03 0 1 1 12 20.11zm4.43-6.01c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.21-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
+    </svg>
+    <a href="https://wa.me/918058586999" target="_blank">+91 80585 86999</a>
+</div>
+
 
     <!-- Email -->
     <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
         <a href="mailto:Info@Soltechlabs.com">Info@Soltechlabs.com</a>
     </div>
-
-   
-
 </section>
 
 <script>
@@ -143,7 +137,9 @@ const navLinks=document.querySelectorAll(".nav a");
 window.addEventListener("scroll",()=>{
     let current="home";
     sections.forEach(s=>{
-        if(scrollY>=s.offsetTop-120){current=s.id;}
+        if(window.scrollY>=s.offsetTop-120){
+            current=s.id;
+        }
     });
     navLinks.forEach(a=>a.classList.remove("active"));
     document.getElementById("nav-"+current).classList.add("active");
