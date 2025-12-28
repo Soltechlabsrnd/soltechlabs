@@ -10,61 +10,126 @@
 <style>
 html{scroll-behavior:smooth;}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#fff;color:#000;min-height:100vh;}
+
+body{
+    background:#000;
+    color:#fff;
+    min-height:100vh;
+}
 
 /* HEADER */
 .header{
-    position:fixed;top:0;left:0;width:100%;height:64px;
-    background:linear-gradient(90deg,#000,#111,#000);
-    display:flex;align-items:center;justify-content:space-between;
-    padding:0 32px;z-index:1000;border-bottom:2px solid #fff;
+    position:fixed;
+    top:0;left:0;
+    width:100%;
+    height:64px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 32px;
+    z-index:1000;
+    border-bottom:2px solid #000;
 }
-.brand{font-size:22px;font-weight:700;color:#fff;}
+.brand{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:#000;
+}
+
+/* NAV */
 .nav{display:flex;gap:28px;}
 .nav a{
     text-decoration:none;
     font-size:14px;
     font-weight:600;
-    color:rgba(255,255,255,.65);
+    color:rgba(0,0,0,.6);
+    transition:.3s ease;
 }
 .nav a.active,
 .nav a:hover{
-    color:#fff;
+    color:#000;
 }
 
+/* SPACER */
 .spacer{height:64px;}
 
 /* HERO */
 .hero{
     min-height:calc(100vh - 64px);
-    display:flex;align-items:center;justify-content:center;
-    text-align:center;padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    text-align:center;
 }
-.wrapper{max-width:820px;}
-h1{font-size:clamp(28px,7vw,60px);margin-bottom:6px;}
-.tagline{letter-spacing:3px;opacity:.7;margin-bottom:12px;}
-p{opacity:.9;}
+.wrapper{max-width:860px;}
+h1{
+    font-size:clamp(32px,8vw,64px);
+    font-weight:1000;
+    margin-bottom:1px;
+}
+.tagline{
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:3px;
+    margin-bottom:18px;
+    opacity:1;
+}
+p{
+    font-size:16px;
+    line-height:1.7;
+    opacity:.85;
+}
+
+/* SECTION DIVIDER */
+.section-divider{
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,.3);
+}
 
 /* CONTACT */
 #contact{
-    padding:80px 20px;
-    border-top:1px solid rgba(0,0,0,.1);
+    padding:100px 20px;
     text-align:center;
 }
-#contact h2{margin-bottom:32px;}
+#contact h2{
+    font-size:32px;
+    margin-bottom:48px;
+}
 
+/* CONTACT CARDS */
 .contact-item{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:12px;
-    margin-bottom:20px;
-    font-weight:700;
-    color:#000;
+    gap:14px;
+    margin:16px auto;
+    padding:16px 28px;
+    max-width:420px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    font-weight:600;
+    transition:.3s ease;
 }
-.contact-item a{color:#000;text-decoration:none;}
-.contact-item svg{width:22px;height:22px;display:block;}
+.contact-item:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.12);
+}
+.contact-item svg{
+    width:22px;
+    height:22px;
+    fill:#fff;
+}
+.contact-item a{
+    color:#fff;
+    text-decoration:none;
+}
 
+/* MOBILE */
 @media(max-width:600px){
     .header{padding:0 18px;}
     .brand{font-size:18px;}
@@ -96,28 +161,28 @@ p{opacity:.9;}
     </div>
 </section>
 
+<!-- DIVIDER -->
+<div class="section-divider"></div>
+
 <section id="contact">
     <h2>Contact Us</h2>
 
-    <!-- Call -->
     <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.59a1 1 0 0 1-.25 1.01l-2.2 2.19z"/>
         </svg>
         <a href="tel:+918058586999">+91 80585 86999</a>
     </div>
 
-    <!-- WhatsApp -->
     <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 2C6.477 2 2 6.486 2 12.018c0 1.93.5 3.823 1.45 5.49L2 22l4.61-1.41a9.94 9.94 0 0 0 5.39 1.56c5.523 0 10-4.486 10-10.018C22 6.486 17.523 2 12 2zm0 18.11a8.06 8.06 0 0 1-4.12-1.13l-.3-.18-2.74.84.84-2.66-.2-.31A8.03 8.03 0 1 1 12 20.11zm4.43-6.01c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.21-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.04.4 1.4.51.59.19 1.12.16 1.54.1.47-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/>
         </svg>
         <a href="https://wa.me/918058586999" target="_blank">+91 80585 86999</a>
     </div>
 
-    <!-- Email -->
     <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
         <a href="mailto:Info@Soltechlabs.com">Info@Soltechlabs.com</a>
@@ -125,13 +190,28 @@ p{opacity:.9;}
 </section>
 
 <script>
-/* CLICK HIGHLIGHT ONLY */
-const navLinks=document.querySelectorAll(".nav a");
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
+
+/* CLICK */
 navLinks.forEach(link=>{
     link.addEventListener("click",()=>{
         navLinks.forEach(a=>a.classList.remove("active"));
         link.classList.add("active");
     });
+});
+
+/* SCROLL AUTO-HIGHLIGHT */
+window.addEventListener("scroll",()=>{
+    let current="home";
+    sections.forEach(section=>{
+        if(window.scrollY>=section.offsetTop-120){
+            current=section.id;
+        }
+    });
+    navLinks.forEach(a=>a.classList.remove("active"));
+    const active=document.querySelector(`.nav a[href="#${current}"]`);
+    if(active) active.classList.add("active");
 });
 </script>
 
