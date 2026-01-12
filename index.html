@@ -51,7 +51,7 @@ body{
     color:#000;
 }
 
-/* OFFSET FOR FIXED HEADER */
+/* OFFSET */
 section{scroll-margin-top:80px;}
 .spacer{height:64px;}
 
@@ -68,18 +68,12 @@ section{scroll-margin-top:80px;}
 h1{
     font-size:clamp(32px,8vw,64px);
     font-weight:900;
-    margin-bottom:2px;
-}
-.tagline{
-    font-size:16px;
-    font-weight:600;
-    letter-spacing:3px;
-    margin-bottom:18px;
+    margin-bottom:12px;
 }
 p{
-    font-size:16px;
-    line-height:1.7;
-    opacity:.85;
+    font-size:22px;
+    line-height:1.2;
+    opacity:.8;
 }
 
 /* DIVIDER */
@@ -95,11 +89,11 @@ p{
     text-align:center;
 }
 #contact h2{
-    font-size:32px;
+    font-size:40px;
     margin-bottom:48px;
 }
 
-/* CONTACT ITEMS */
+/* CONTACT ITEM */
 .contact-item{
     display:flex;
     align-items:center;
@@ -133,6 +127,7 @@ p{
     .header{padding:0 18px;}
     .brand{font-size:18px;}
     .nav{gap:18px;}
+    p{font-size:18px;}
 }
 </style>
 </head>
@@ -152,10 +147,7 @@ p{
 <section id="home" class="hero">
     <div class="wrapper">
         <h1>SolTechLabs</h1>
-        <div class="tagline">The Solution</div>
-        <p>
-           SolTechLabs Is A Tech Research And Development Initiative Focused On Practical Solutions.
-        </p>
+        <p>A Tech Solution Research Initiative.</p>
     </div>
 </section>
 
@@ -163,28 +155,7 @@ p{
 
 <section id="contact">
     <h2>Contact Us</h2>
-<p style="margin-top:24px; font-size:18px; opacity:1;">
-    Call Hours: <strong>8:00 PM – 10:00 PM</strong>
-</p>
 
-
-    <!-- CALL -->
-    <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.59a1 1 0 0 1-.25 1.01l-2.2 2.19z"/>
-        </svg>
-        <a href="tel:+918058586999">+91 80585 86999</a>
-    </div>
-
-    <!-- WHATSAPP (FULL OFFICIAL ICON – WORKS AFTER DEPLOYMENT) -->
-    <div class="contact-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-            <path d="M16 2C8.28 2 2 8.28 2 16c0 2.82.74 5.47 2.02 7.77L2 30l6.39-1.97A13.93 13.93 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5c-2.3 0-4.45-.63-6.3-1.73l-.45-.26-3.79 1.17 1.21-3.69-.29-.47A11.44 11.44 0 1 1 16 27.5zm6.47-8.67c-.35-.18-2.07-1.02-2.39-1.14-.32-.12-.56-.18-.79.18-.23.35-.91 1.14-1.12 1.37-.21.23-.41.26-.76.09-.35-.18-1.49-.55-2.84-1.75-1.05-.94-1.75-2.1-1.95-2.45-.21-.35-.02-.53.16-.7.16-.16.35-.41.53-.61.18-.21.23-.35.35-.59.12-.23.06-.44-.03-.61-.09-.18-.79-1.9-1.08-2.6-.29-.7-.59-.61-.79-.62h-.67c-.23 0-.61.09-.94.44-.32.35-1.23 1.2-1.23 2.92 0 1.73 1.26 3.4 1.44 3.63.18.23 2.48 3.78 6.01 5.3.84.36 1.5.58 2.01.73.86.27 1.64.23 2.26.14.68-.1 2.07-.85 2.36-1.67.29-.82.29-1.52.2-1.67-.09-.15-.32-.23-.67-.41z"/>
-        </svg>
-        <a href="https://wa.me/918058586999" target="_blank">+91 80585 86999</a>
-    </div>
-
-    <!-- EMAIL -->
     <div class="contact-item">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
@@ -197,33 +168,32 @@ p{
 const navLinks = document.querySelectorAll(".nav a");
 const sections = document.querySelectorAll("section");
 
-/* INTERSECTION OBSERVER – RELIABLE AFTER DEPLOYMENT */
+/* CLICK → INSTANT FEEDBACK */
+navLinks.forEach(link=>{
+    link.addEventListener("click",()=>{
+        navLinks.forEach(l=>l.classList.remove("active"));
+        link.classList.add("active");
+    });
+});
+
+/* SCROLL → AUTO HIGHLIGHT (FIXED) */
 const observer = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(l => l.classList.remove("active"));
-                const active = document.querySelector(
+    entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                navLinks.forEach(l=>l.classList.remove("active"));
+                const active=document.querySelector(
                     `.nav a[href="#${entry.target.id}"]`
                 );
-                if (active) active.classList.add("active");
+                if(active) active.classList.add("active");
             }
         });
     },
-    {
-        rootMargin: "-50% 0px -50% 0px",
-        threshold: 0
-    }
+    { threshold: 0.6 }
 );
 
-sections.forEach(section => observer.observe(section));
+sections.forEach(section=>observer.observe(section));
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
